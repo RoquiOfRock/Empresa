@@ -4,6 +4,7 @@
  */
 package capaGrafica;
 import capaLogica.Casas;
+import javax.swing.JOptionPane;
 /**
  *
  * @author paraj
@@ -27,15 +28,19 @@ public class FrameVivienda extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtNumH = new javax.swing.JTextField();
         txtNumB = new javax.swing.JTextField();
-        BtnRcasa = new javax.swing.JRadioButton();
+        BtnRCasa = new javax.swing.JRadioButton();
         BtnRApto = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         BtnVolver = new javax.swing.JButton();
+        BtnSiguiente = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,8 +53,8 @@ public class FrameVivienda extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Numero de baños");
 
-        buttonGroup1.add(BtnRcasa);
-        BtnRcasa.setText("Casa");
+        buttonGroup1.add(BtnRCasa);
+        BtnRCasa.setText("Casa");
 
         buttonGroup1.add(BtnRApto);
         BtnRApto.setText("Apartamento");
@@ -60,6 +65,13 @@ public class FrameVivienda extends javax.swing.JFrame {
         BtnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVolverActionPerformed(evt);
+            }
+        });
+
+        BtnSiguiente.setText("Siguiente");
+        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSiguienteActionPerformed(evt);
             }
         });
 
@@ -75,7 +87,7 @@ public class FrameVivienda extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnRcasa)
+                    .addComponent(BtnRCasa)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtNumH)
                         .addComponent(txtNumB, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
@@ -84,9 +96,14 @@ public class FrameVivienda extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(BtnVolver))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnVolver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnSiguiente)
+                        .addGap(38, 38, 38))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,13 +119,18 @@ public class FrameVivienda extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txtNumB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(BtnRcasa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(13, 13, 13)
-                .addComponent(BtnRApto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(BtnVolver)
+                .addComponent(BtnRCasa)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(BtnRApto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnVolver)
+                    .addComponent(BtnSiguiente))
                 .addGap(18, 18, 18))
         );
 
@@ -121,6 +143,29 @@ public class FrameVivienda extends javax.swing.JFrame {
         FrameInmuebles VInmuebles = new FrameInmuebles();
         VInmuebles.setVisible(true);
     }//GEN-LAST:event_BtnVolverActionPerformed
+
+    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+        if(txtNumH.getText().isEmpty()&&txtNumB.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null, "Falta informacion Valida", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            if(BtnRCasa.isSelected()){
+                dispose();
+                setVisible(false);
+                FrameCasas VCasas = new FrameCasas();
+                VCasas.setVisible(true);
+            }else{
+                if(BtnRApto.isSelected()){
+                    dispose();
+                    setVisible(false);
+                    FrameApto VApto = new FrameApto();
+                    VApto.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null, "No seleciono el tipo de vivienda", "Error De Selecion", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,9 +204,11 @@ public class FrameVivienda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BtnRApto;
-    private javax.swing.JRadioButton BtnRcasa;
+    private javax.swing.JRadioButton BtnRCasa;
+    private javax.swing.JButton BtnSiguiente;
     private javax.swing.JButton BtnVolver;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
