@@ -55,11 +55,6 @@ public class FrameCasas extends javax.swing.JFrame {
         BtnRCU.setText("Casa Urbana");
 
         BtnVolver.setText("Volver");
-        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnVolverActionPerformed(evt);
-            }
-        });
 
         BtnSiguiente.setText("Siguiente");
         BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -128,10 +123,15 @@ public class FrameCasas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Falta informacion Valida", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             if(BtnRCU.isSelected()){
+                String[] Opciones={"Independiente","Cerrada","Cancelar"};
+                int Respuesta= JOptionPane.showOptionDialog(null, "Su casa es Independiente o Cerrada?", "Tipó de Propiedad Urbana",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,Opciones,Opciones[2]);
+                if(Respuesta==0){
+                JOptionPane.showMessageDialog(null, "Inmueble Registrado con exito", "Registro completo", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 setVisible(false);
-                FrameCasas VCasas = new FrameCasas();
-                VCasas.setVisible(true);
+                FrameInicio VInicio = new FrameInicio();
+                VInicio.setVisible(true);
+                }
             }else{
                 if(BtnRCR.isSelected()){
                     dispose();
@@ -143,14 +143,8 @@ public class FrameCasas extends javax.swing.JFrame {
                 }
             }
         }
+       
     }//GEN-LAST:event_BtnSiguienteActionPerformed
-
-    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
-        dispose();
-        setVisible(false);
-        FrameVivienda VVivienda = new FrameVivienda();
-        VVivienda.setVisible(true);
-    }//GEN-LAST:event_BtnVolverActionPerformed
 
     /**
      * @param args the command line arguments
