@@ -105,8 +105,8 @@ public class FrameLocales extends javax.swing.JFrame {
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
      dispose();
        setVisible(false);
-       FrameInicio VInicio = new FrameInicio();
-       VInicio.setVisible(true);    
+       FrameInmuebles VInmueble = new FrameInmuebles();
+       VInmueble.setVisible(true);    
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
