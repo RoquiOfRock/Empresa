@@ -35,6 +35,7 @@ public class FrameLocales extends javax.swing.JFrame {
         BtnRDelGobierno = new javax.swing.JRadioButton();
         BtnVolver = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
+        BtnInicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +62,13 @@ public class FrameLocales extends javax.swing.JFrame {
             }
         });
 
+        BtnInicio.setText("Inicio");
+        BtnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnInicioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,7 +81,7 @@ public class FrameLocales extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addContainerGap()
                         .addComponent(BtnVolver)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,6 +89,10 @@ public class FrameLocales extends javax.swing.JFrame {
                     .addComponent(BtnRDelGobierno)
                     .addComponent(BtnRComercio))
                 .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BtnInicio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +108,8 @@ public class FrameLocales extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnVolver)
                     .addComponent(BtnGuardar))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnInicio))
         );
 
         pack();
@@ -113,6 +126,13 @@ public class FrameLocales extends javax.swing.JFrame {
      
         
     }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void BtnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInicioActionPerformed
+        dispose();
+       setVisible(false);
+       FrameInicio VInicio = new FrameInicio();
+       VInicio.setVisible(true);
+    }//GEN-LAST:event_BtnInicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +178,7 @@ public class FrameLocales extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
+    private javax.swing.JButton BtnInicio;
     private javax.swing.JRadioButton BtnRComercio;
     private javax.swing.JRadioButton BtnRDelGobierno;
     private javax.swing.JButton BtnVolver;
