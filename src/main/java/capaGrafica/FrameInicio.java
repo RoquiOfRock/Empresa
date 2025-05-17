@@ -9,12 +9,12 @@ package capaGrafica;
  *
  * @author 57169558
  */
-public class Inicio extends javax.swing.JFrame {
+public class FrameInicio extends javax.swing.JFrame {
 
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+    public FrameInicio() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -29,42 +29,31 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        ItemCasas = new javax.swing.JMenuItem();
-        ItemApto = new javax.swing.JMenuItem();
-        ItemLocal = new javax.swing.JMenuItem();
+        ItemInmueble = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         MenuCerrar = new javax.swing.JMenu();
 
         jMenu3.setText("jMenu3");
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Ingreso");
 
-        jMenu4.setText("Vivienda");
-
-        ItemCasas.setText("Casas");
-        ItemCasas.addActionListener(new java.awt.event.ActionListener() {
+        ItemInmueble.setText("Ingresar Inmueble");
+        ItemInmueble.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItemCasasActionPerformed(evt);
+                ItemInmuebleActionPerformed(evt);
             }
         });
-        jMenu4.add(ItemCasas);
+        jMenu1.add(ItemInmueble);
 
-        ItemApto.setText("Apto");
-        jMenu4.add(ItemApto);
-
-        ItemLocal.setText("Local");
-        ItemLocal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItemLocalActionPerformed(evt);
-            }
-        });
-        jMenu4.add(ItemLocal);
-
-        jMenu1.add(jMenu4);
+        jMenuItem2.setText("Registro");
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -92,23 +81,18 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ItemLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemLocalActionPerformed
-       dispose();
-       setVisible(false);
-       Locales VLocales = new Locales();
-       VLocales.setVisible(true); 
-    }//GEN-LAST:event_ItemLocalActionPerformed
-
-    private void ItemCasasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemCasasActionPerformed
-
-        
-    }//GEN-LAST:event_ItemCasasActionPerformed
-
     private void MenuCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCerrarActionPerformed
       dispose();
       setVisible(false);
       System.exit(0);
     }//GEN-LAST:event_MenuCerrarActionPerformed
+
+    private void ItemInmuebleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemInmuebleActionPerformed
+        dispose();
+        setVisible(false);
+        FrameInmuebles VInmuebles = new FrameInmuebles();
+        VInmuebles.setVisible(true);
+    }//GEN-LAST:event_ItemInmuebleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,32 +111,32 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                new FrameInicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem ItemApto;
-    private javax.swing.JMenuItem ItemCasas;
-    private javax.swing.JMenuItem ItemLocal;
+    private javax.swing.JMenuItem ItemInmueble;
     private javax.swing.JMenu MenuCerrar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }
