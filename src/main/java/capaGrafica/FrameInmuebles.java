@@ -150,7 +150,7 @@ public class FrameInmuebles extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
-        if(txtidP.getText().isEmpty()&&txtAm.getText().isEmpty()&&txtD.getText().isEmpty()){
+        if(txtidP.getText().isEmpty()||txtAm.getText().isEmpty()||txtD.getText().isEmpty()){
         JOptionPane.showMessageDialog(null, "Falta informacion Valida", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             if(BtnRLocal.isSelected()){

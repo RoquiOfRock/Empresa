@@ -5,6 +5,7 @@
  */
 package capaGrafica;
 import capaLogica.Locales;
+import javax.swing.JOptionPane;
 /**
  *
  * @author 57169558
@@ -30,7 +31,7 @@ public class FrameLocales extends javax.swing.JFrame {
 
         buttonGroup = new javax.swing.ButtonGroup();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtLocate = new javax.swing.JTextField();
         BtnRComercio = new javax.swing.JRadioButton();
         BtnRDelGobierno = new javax.swing.JRadioButton();
         BtnVolver = new javax.swing.JButton();
@@ -79,7 +80,7 @@ public class FrameLocales extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtLocate, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(BtnVolver)))
@@ -100,13 +101,13 @@ public class FrameLocales extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLocate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnRComercio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnRDelGobierno)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnVolver)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnVolver, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtnGuardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnInicio))
@@ -123,7 +124,19 @@ public class FrameLocales extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-     
+     if(txtLocate.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null, "No Ingreso una localizacion valida", "Error", JOptionPane.ERROR_MESSAGE);
+     }else{
+         if(BtnRComercio.isSelected()){
+             JOptionPane.showMessageDialog(null, "Local Registrado con exito", "Registro Finalizado", JOptionPane.INFORMATION_MESSAGE);
+         }else{
+         if(BtnRDelGobierno.isSelected()){
+             JOptionPane.showMessageDialog(null, "Local Gubernamental Registrado con exito", "Registro Finalizado", JOptionPane.INFORMATION_MESSAGE);
+         }else{
+             JOptionPane.showMessageDialog(null, "No seleciono el tipo de local", "Error de selecion", JOptionPane.ERROR_MESSAGE);
+         }
+         }
+     }
         
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
@@ -184,6 +197,6 @@ public class FrameLocales extends javax.swing.JFrame {
     private javax.swing.JButton BtnVolver;
     private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtLocate;
     // End of variables declaration//GEN-END:variables
 }
