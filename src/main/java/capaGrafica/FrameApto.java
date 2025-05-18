@@ -15,6 +15,7 @@ public class FrameApto extends javax.swing.JFrame {
      */
     public FrameApto() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

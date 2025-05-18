@@ -16,6 +16,7 @@ public class FrameCasas extends javax.swing.JFrame {
      */
     public FrameCasas() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

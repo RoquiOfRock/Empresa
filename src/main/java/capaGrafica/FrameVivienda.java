@@ -16,6 +16,7 @@ public class FrameVivienda extends javax.swing.JFrame {
      */
     public FrameVivienda() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
