@@ -4,6 +4,8 @@
  */
 package capaGrafica;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author paraj
@@ -62,6 +64,11 @@ public class FrameApto extends javax.swing.JFrame {
         });
 
         BtnSiguiente.setText("Siguiente");
+        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSiguienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +132,20 @@ public class FrameApto extends javax.swing.JFrame {
         FrameVivienda VVivienda = new FrameVivienda();
         VVivienda.setVisible(true);
     }//GEN-LAST:event_BtnVolverActionPerformed
+
+    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+        if(txtVdA.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No ingreso el valor de la administracion", "Error de Informacion", JOptionPane.ERROR_MESSAGE);
+        }else{
+            if(BtnRAptoEstudio.isSelected()){
+                JOptionPane.showMessageDialog(null, "Apartamento registrado con exito", "Registro Completado", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                if(BtnRAptoFamiliar.isSelected()){
+                JOptionPane.showMessageDialog(null, "Apartamento registrado con exito", "Registro Completado", JOptionPane.INFORMATION_MESSAGE);
+            }
+            }
+        }
+    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
