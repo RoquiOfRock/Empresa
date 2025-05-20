@@ -17,6 +17,7 @@ public class FrameCasas extends javax.swing.JFrame {
     public FrameCasas() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -132,6 +133,10 @@ public class FrameCasas extends javax.swing.JFrame {
                 setVisible(false);
                 FrameInicio VInicio = new FrameInicio();
                 VInicio.setVisible(true);
+                }
+                if(Respuesta==1){
+                FrameCasaCerrada  VCasaCerrada = new FrameCasaCerrada();
+                VCasaCerrada.setVisible(true);
                 }
             }else{
                 if(BtnRCR.isSelected()){
