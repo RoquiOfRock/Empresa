@@ -140,10 +140,11 @@ public class FrameCasas extends javax.swing.JFrame {
                 }
             }else{
                 if(BtnRCR.isSelected()){
+                    JOptionPane.showMessageDialog(null, "Inmueble Registrado con exito", "Registro completo", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
                     setVisible(false);
-                    FrameApto VApto = new FrameApto();
-                    VApto.setVisible(true);
+                    FrameInicio VInicio = new FrameInicio();
+                    VInicio.setVisible(true);
                 }else{
                     JOptionPane.showMessageDialog(null, "No seleciono el tipo de vivienda", "Error De Selecion", JOptionPane.ERROR_MESSAGE);
                 }

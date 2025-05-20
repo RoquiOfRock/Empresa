@@ -4,6 +4,8 @@
  */
 package capaGrafica;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author paraj
@@ -49,6 +51,11 @@ public class FrameCasaCerrada extends javax.swing.JFrame {
         jToggleButton1.setText("Contiene Areas Comunes");
 
         BtnSiguiente.setText("Siguiente");
+        BtnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSiguienteActionPerformed(evt);
+            }
+        });
 
         BtnVolver.setText("Volver");
         BtnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +116,12 @@ public class FrameCasaCerrada extends javax.swing.JFrame {
        dispose();
        setVisible(false);
     }//GEN-LAST:event_BtnVolverActionPerformed
+
+    private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
+        JOptionPane.showMessageDialog(null, "Casa Registrada con exito", "Registro finalizado", JOptionPane.INFORMATION_MESSAGE);
+        dispose();
+        setVisible(false);
+    }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
